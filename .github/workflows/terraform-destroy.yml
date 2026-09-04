@@ -27,6 +27,7 @@ jobs:
 
         steps:
             - name: "Validera bekräftelse"
+              working-directory: .
               run: |
                   if [ "${{ github.event.inputs.confirmation }}" != "destroy" ]; then
                     echo "Fel: Bekräftelsesträngen matchar inte 'destroy'. Avbryter körningen för att skydda infrastrukturen."
